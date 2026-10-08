@@ -1,0 +1,605 @@
+#login-header {
+  display: none !important;
+}
+/* حاوية التبويبات */
+.react-tabs{margin-top:-1.2rem}
+
+ul#tabs{
+  border-radius:0;
+  width:100%!important;
+  height:102px;
+  padding:0!important;
+  margin-top:68px;
+  position:relative;
+  overflow-x:clip;
+  overflow-y:visible;
+  border:1px solid rgba(214,176,90,.35)!important;
+  background:linear-gradient(180deg,#1e160e 0,#151009 55%,#0d0905 100%)!important;
+  box-shadow:inset 0 1px 0 rgba(255,235,170,.08),0 2px 8px rgba(0,0,0,.35)!important;
+}
+ul#tabs::before,
+ul#tabs::after{display:none!important;content:none!important;animation:none!important}
+
+/* عنصر li */
+.react-tabs__tab-list,
+.react-tabs__tab{text-align:center;margin-top:-8px;background:0 0!important;border:none}
+
+.react-tabs__tab{
+  width:32.5%;
+  font-size:.625rem;
+  margin-left:3px;
+  position:relative;
+  top:13px;
+  right:19px;
+}
+
+/* الزر الفعلي (الرابط a داخل li) */
+.react-tabs__tab a,
+.react-tabs__tab a.active{
+  position:relative!important;
+  z-index:5;
+  top:-41px;
+  margin:0 0 0 20px;
+  width:99%;
+  height:32px;
+  padding:8px 0 0!important;
+  text-align:center;
+  line-height:20px;
+  border-radius:4px!important;
+  font-size:.7rem;
+  font-weight:600;
+  color:#f1deb0!important;
+  border:1px solid rgba(214,176,90,.35)!important;
+  background:linear-gradient(180deg,#2e2415 0,#211a10 55%,#17110a 100%)!important;
+  box-shadow:inset 0 1px 0 rgba(255,235,170,.1),0 1px 3px rgba(0,0,0,.35)!important;
+  text-shadow:0 1px 2px rgba(0,0,0,.6)!important;
+}
+
+/* الإطار الداخلي الرفيع */
+.react-tabs__tab a::before,
+.react-tabs__tab a.active::before{
+  content:"";
+  position:absolute;
+  inset:1px;
+  border-radius:9px;
+  border:1px solid rgba(214,176,90,.28);
+  pointer-events:none;
+}
+
+/* الزر المحدد */
+.react-tabs__tab a.active{
+  color:#1b1309!important;
+  border-color:rgba(245,215,130,.8)!important;
+  background:linear-gradient(135deg,#e8c776 0,#d2a94d 38%,#a67c2e 72%,#7a5a1f 100%)!important;
+  text-shadow:0 1px 0 rgba(255,235,170,.45)!important;
+}
+
+/* خلفية محتوى التبويب */
+#tabs-content{background:linear-gradient(180deg,#1b140d,#120d08)!important}
+/* خلفية منطقة التبويب */
+#tabs-content.tab-content{
+  padding:8px 10px 10px!important;
+  background:linear-gradient(180deg,#1e160e 0,#0d0905 100%)!important;
+  border-radius:0 0 8px 8px;
+}
+
+/* إلغاء ارتفاع النماذج القديم */
+#tabs-content #guest-form,
+#tabs-content #login-form,
+#tabs-content #register-form{
+  height:auto!important;
+  margin:0!important;
+  padding:0!important;
+}
+
+/* صف واحد مرتب لكل نموذج */
+#tabs-content #guest-form>div,
+#tabs-content #login-form>div,
+#tabs-content #register-form>div{
+  display:flex!important;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:6px 0;
+  direction:ltr;
+}
+
+/* الحقول */
+#tabs-content #guest-form__name,
+#tabs-content #login-form__name,
+#tabs-content #login-form__password,
+#tabs-content #register-form__name,
+#tabs-content #register-form__password{
+  position:static!important;
+  flex:0 0 100%;
+  width:100%!important;
+  height:32px!important;
+  margin:0!important;
+  padding:0 8px!important;
+  text-align:center!important;
+  direction:rtl;
+  font-family:Cairo,sans-serif!important;
+  font-size:13px;
+  font-weight:700;
+  color:#2b2012!important;
+  background:linear-gradient(180deg,#fbf3df,#efe0b8)!important;
+  border:1px solid #c9a24f!important;
+  border-radius:4px!important;
+  box-shadow:inset 0 1px 2px rgba(80,55,10,.2)!important;
+  outline:0!important;
+}
+
+/* زر الدخول (الثلاثة بنفس الشكل) */
+#tabs-content #guest-form__submit,
+#tabs-content #login-form__submit,
+#tabs-content #register-form__submit{
+  position:static!important;
+  flex:0 0 46%;
+  width:46%!important;
+  height:34px!important;
+  margin:4px 0 0 0!important;
+  padding:0!important;
+  top:auto!important;
+  left:auto!important;
+  display:flex!important;
+  align-items:center;
+  justify-content:center;
+  font-family:Cairo,sans-serif!important;
+  font-size:14px;
+  font-weight:800;
+  color:#1b1309!important;
+  border:1px solid rgba(245,220,150,.8)!important;
+  border-radius:20px!important;
+  background:linear-gradient(180deg,#ecd084 0,#c9a24f 50%,#8f6a22 100%)!important;
+  box-shadow:inset 0 1px 0 rgba(255,245,200,.5),0 2px 7px rgba(0,0,0,.45)!important;
+  text-shadow:0 1px 0 rgba(255,235,170,.5);
+}
+
+/* خانة "دخول مخفي" */
+#tabs-content #login-form__hidden-checkbox{
+  position:static!important;
+  top:0!important;
+  margin:4px 0 0
+}
+html body .react-tabs{
+  margin:0!important;
+  padding:0!important;
+}
+
+/* الصندوق الفارغ */
+html body .react-tabs ul#tabs.react-tabs__tab-list{
+  height:auto!important;
+  min-height:0!important;
+  max-height:none!important;
+  margin:0!important;
+  padding:4px!important;
+  display:flex!important;
+  gap:4px;
+  overflow:visible!important;
+}
+
+/* إرجاع الأزرار داخل الصندوق بدل رفعها خارجه */
+html body .react-tabs ul#tabs > li.react-tabs__tab{
+  position:static!important;
+  top:auto!important;
+  right:auto!important;
+  left:auto!important;
+  margin:0!important;
+  width:auto!important;
+  height:auto!important;
+  flex:1 1 0!important;
+}
+html body .react-tabs ul#tabs > li.react-tabs__tab > a{
+  position:relative!important;
+  top:auto!important;
+  left:auto!important;
+  right:auto!important;
+  margin:0!important;
+  width:100%!important;
+  display:block!important;
+}
+
+/* النماذج تلتصق تحت الأزرار */
+html body .react-tabs #tabs-content{
+  margin:0!important;
+  padding:6px 8px 8px!important;
+}
+html body .react-tabs #tabs-content > .tab-pane,
+html body .react-tabs #tabs-content form{
+  height:auto!important;
+  margin:0!important;
+  padding:0!important;
+}
+#tabs-content #guest-form>div,
+#tabs-content #login-form>div,
+#tabs-content #register-form>div{
+  justify-content:center!important;
+}
+
+#tabs-content #guest-form__submit,
+#tabs-content #login-form__submit,
+#tabs-content #register-form__submit{
+  flex:0 0 60%!important;
+  width:60%!important;
+  margin:6px auto 0!important;
+}
+
+/* دخول مخفي بالوسط تحت الزر */
+#tabs-content #login-form__hidden-checkbox{
+  margin:6px 0 0 0!important;
+}
+#tabs-content #login-form__hidden-label{
+  margin:6px 4px 0!important;
+  color:#f1deb0;
+}
+
+/* الشريط */
+html body .users-count-label{
+  position:relative;
+  width:98%;
+  height:27px;
+  padding:0!important;
+  overflow:hidden;
+  border:1px solid rgba(214,176,90,.5)!important;
+  border-radius:0 8px 8px 0;
+  background:linear-gradient(90deg,#0d0905 0,#2a1f12 36%,#5c4420 72%,#b8923f 100%)!important;
+  box-shadow:inset 0 1px 0 rgba(255,235,170,.12),0 2px 5px rgba(0,0,0,.4);
+}
+
+/* البيل الداكن الذي فيه النص */
+html body .users-count-label p{
+  position:relative;
+  top:0!important;
+  left:0!important;
+  width:38%!important;
+  height:100%!important;
+  margin:0!important;
+  padding:0 6px!important;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:5px;
+  font-size:12px!important;
+  font-weight:700;
+  line-height:1;
+  color:#f6e7c1!important;
+  white-space:nowrap;
+  border:0!important;
+  border-right:3px solid #e8c776!important;
+  border-radius:0!important;
+  background:linear-gradient(180deg,#1a130b 0,#0a0705 100%)!important;
+  box-shadow:inset 0 1px 0 rgba(255,235,170,.08);
+}
+
+/* الأيقونة والعدد */
+html body .users-count-label p .fa,
+html body .users-count-label p .count{
+  color:#f0d48a!important;
+  font-size:12px!important;
+}
+/* البيل */
+html body #app .users-count-label p.label-count{
+  position:relative;
+  top:0!important;
+  left:0!important;
+  width:auto!important;
+  min-width:150px;
+  max-width:70%;
+  height:100%!important;
+  margin:0!important;
+  padding:0 14px!important;
+  display:flex!important;
+  direction:ltr;                 /* الأيقونة والعدد يسار، النص يمين */
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  font-family:Fanni,'El Messiri',sans-serif!important;
+  font-size:15px!important;
+  font-weight:700;
+  line-height:1;
+  color:#f6e7c1!important;
+  white-space:nowrap;
+  background:linear-gradient(180deg,#1a130b 0,#080604 100%)!important;
+  border:2px solid #d6b05a!important;
+  border-radius:16px!important;
+  box-shadow:inset 0 1px 0 rgba(255,235,170,.15),0 2px 5px rgba(0,0,0,.5);
+}
+
+/* الأيقونة + العدد */
+html body #app .users-count-label p.label-count .fa{
+  display:inline-flex!important;
+  align-items:center;
+  gap:6px;
+  margin:0!important;
+  padding:0!important;
+  background:none!important;
+  border:0!important;
+  color:#f0d48a!important;
+  font-size:15px!important;
+}
+
+/* أيقونة شخص واحد */
+html body #app .users-count-label p.label-count .fa::before{
+  content:"\f007"!important;
+  font-family:FontAwesome!important;
+  font-size:21px!important;
+  position:static!important;
+  margin:0!important;
+}
+
+/* رقم العدد */
+html body #app .users-count-label p.label-count .count{
+  font-family:Arial,Helvetica,sans-serif!important;
+  font-size:17px!important;
+  font-weight:700;
+  color:#f0d48a!important;
+}
+html body #connection_container,
+html body #connection_container #connection-state-on,
+html body #connection_container #connection-state-off{
+  display:none!important;
+}
+/* البيل بحجم المحتوى */
+html body #app .users-count-label p.label-count{
+  flex:0 0 auto!important;
+  width:fit-content!important;
+  min-width:0!important;
+  max-width:none!important;
+  height:60px!important;
+  margin:0 0 0 2px!important;
+  padding:0 9px!important;
+  display:inline-flex!important;
+  direction:ltr!important;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  overflow:visible!important;
+  white-space:nowrap!important;
+  font-size:10px!important;
+  color:#f6e7c1!important;
+}
+
+/* النص بعد الأيقونة والعدد */
+html body #app .users-count-label p.label-count::after{
+  content:"المتواجدون الان";
+  display:inline-block;
+  direction:rtl;
+  font-family:Fanni,'El Messiri',sans-serif;
+  font-size:13px;
+  font-weight:700;
+  color:#f6e7c1;
+}
+html body #app .users-count-label p.label-count{
+  display:inline-flex!important;
+  flex-direction:row!important;
+  flex-wrap:nowrap!important;
+  align-items:center!important;
+  justify-content:center!important;
+  direction:ltr!important;
+  gap:6px!important;
+  height:26px!important;
+  line-height:1!important;
+  white-space:nowrap!important;
+  overflow:visible!important;
+}
+
+/* الأيقونة + الرقم بصف واحد */
+html body #app .users-count-label p.label-count .fa{
+  display:inline-flex!important;
+  flex-direction:row!important;
+  flex-wrap:nowrap!important;
+  align-items:center!important;
+  gap:4px!important;
+  float:none!important;
+  width:auto!important;
+  height:auto!important;
+  margin:0!important;
+  padding:0!important;
+  line-height:1!important;
+}
+
+html body #app .users-count-label p.label-count .fa::before{
+  position:static!important;
+  margin:0!important;
+  float:none!important;
+}
+
+html body #app .users-count-label p.label-count .count{
+  display:inline!important;
+  float:none!important;
+  margin:0!important;
+  padding:0!important;
+  line-height:1!important;
+}
+
+/* النص بنفس الصف */
+html body #app .users-count-label p.label-count::after{
+  display:inline-block!important;
+  line-height:1!important;
+  white-space:nowrap!important;
+}
+/* ترتيب العناصر بصف واحد: أيقونة ← رقم ← نص */
+html body #app .users-count-label p.label-count{
+  display:inline-flex!important;
+  flex-direction:row!important;
+  align-items:center!important;
+  justify-content:center!important;
+  direction:ltr!important;
+  gap:8px!important;
+  width:fit-content!important;
+  padding:0 14px!important;
+}
+
+/* إلغاء أي تثبيت مطلق من كود الموقع */
+html body #app .users-count-label p.label-count .fa,
+html body #app .users-count-label p.label-count .count,
+html body #app .users-count-label p.label-count .fa::before{
+  position:static!important;
+  top:auto!important;
+  left:auto!important;
+  right:auto!important;
+  bottom:auto!important;
+  transform:none!important;
+  float:none!important;
+  margin:0!important;
+  width:auto!important;
+  height:auto!important;
+}
+
+html body #app .users-count-label p.label-count .fa{ order:1; display:inline-flex!important; align-items:center!important; gap:6px!important; }
+html body #app .users-count-label p.label-count .count{ order:2; display:inline-block!important; }
+html body #app .users-count-label p.label-count::after{ order:3; position:static!important; margin:0 0 0 4px!important; }
+/* الحقول: ستروك ذهبي يمين ويسار */
+#tabs-content #guest-form__name,
+#tabs-content #login-form__name,
+#tabs-content #login-form__password,
+#tabs-content #register-form__name,
+#tabs-content #register-form__password{
+  height:30px!important;
+  border:0!important;
+  border-top:1px solid rgba(214,176,90,.35)!important;
+  border-bottom:1px solid rgba(214,176,90,.35)!important;
+  border-left:4px solid #d6b05a!important;
+  border-right:4px solid #d6b05a!important;
+  border-radius:3px!important;
+  box-shadow:inset 0 1px 2px rgba(80,55,10,.2),0 0 0 1px rgba(0,0,0,.25)!important;
+}
+
+/* تقريب الحقول من بعض */
+#tabs-content #guest-form>div,
+#tabs-content #login-form>div,
+#tabs-content #register-form>div{
+  gap:2px 0!important;
+}
+
+/* زر الدخول بالحجم الأصغر */
+#tabs-content #guest-form__submit,
+#tabs-content #login-form__submit,
+#tabs-content #register-form__submit{
+  flex:0 0 38%!important;
+  width:38%!important;
+  height:30px!important;
+  margin:6px 0 0 0!important;
+  font-size:13px!important;
+}
+/* تقليل عرض الحقول وتوسيطها */
+#tabs-content #guest-form__name,
+#tabs-content #login-form__name,
+#tabs-content #login-form__password,
+#tabs-content #register-form__name,
+#tabs-content #register-form__password{
+  flex:0 0 75%!important;
+  width:75%!important;
+  margin:0 auto!important;
+}
+/* بطاقات المتصلين: فاتحة بستروك ذهبي */
+#online_users > div,
+#online_users > li,
+#online_users .uzer{
+  background:linear-gradient(180deg,#fffaf0 0,#f6ecd2 100%)!important;
+  border:1px solid rgba(214,176,90,.5)!important;
+  border-right:4px solid #c9a24f!important;
+  border-left:4px solid #c9a24f!important;
+  border-radius:6px!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.8),0 1px 4px rgba(80,55,10,.18)!important;
+  color:#3a2b14!important;
+  margin-bottom:6px;
+}
+
+/* النصوص الصغيرة داخل البطاقة */
+#online_users > div *,
+#online_users > li *,
+#online_users .uzer *{
+  color:#5a4521;
+}
+/* النجوم: لون ثابت لا يتأثر بلون البطاقة */
+#online_users .chat_pane__user_item--stars,
+#online_users .chat_pane__user_item--stars *{
+  color:#f2b01e!important;
+}
+/* لمعة زجاجية تعبر على النجوم وتتكرر */
+#online_users .chat_pane__user_item--stars{
+  position:relative;
+  display:inline-block;
+  overflow:hidden;
+  vertical-align:middle;
+}
+
+#online_users .chat_pane__user_item--stars::after{
+  content:"";
+  position:absolute;
+  top:-20%;
+  left:-60%;
+  width:40%;
+  height:140%;
+  pointer-events:none;
+  background:linear-gradient(
+    100deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,.85) 50%,
+    rgba(255,255,255,0) 100%
+  );
+  transform:skewX(-20deg);
+  animation:starShine 2.8s ease-in-out infinite;
+}
+
+@keyframes starShine{
+  0%   { left:-60%; }
+  55%  { left:130%; }
+  100% { left:130%; }
+}
+/* خانة دخول مخفي: نفس الخط */
+/* الزاوية: مرجع التثبيت */
+/* ============ أزرار البنر ============ */
+
+/* إلغاء الفراغات حول الأزرار وبينها */
+html body .react-tabs,
+html body .react-tabs ul#tabs.react-tabs__tab-list,
+html body #login-btn-holders{
+  margin:0!important;
+  padding:0!important;
+  gap:2px!important;
+  background:#0d0905!important;
+  border:0!important;
+}
+
+/* زر بصف زر: ملاصقة بدون مسافة */
+html body .react-tabs ul#tabs > li.react-tabs__tab,
+html body #login-btn-holders > *{
+  margin:0!important;
+  padding:0!important;
+}
+html body .react-tabs ul#tabs > li.react-tabs__tab > a,
+html body #login-btn-holders a,
+html body #login-btn-holders button{
+  margin:0!important;
+  border-radius:0!important;
+}
+
+/* إلغاء المسافات بين الصور والعناصر */
+html body img{ vertical-align:bottom; }
+
+/* النص العادي (تصميم وبرمجه:) */
+#nsmat-copyrights{
+  color:#b9a06a!important;
+}
+
+/* الاسم (يوكام هوست) */
+#nsmat-copyrights a,
+#nsmat-copyrights a *{
+  color:#e8c776!important;
+  text-shadow:0 0 6px rgba(214,176,90,.45)!important;
+}
+
+#nsmat-copyrights a:hover{
+  color:#fff0b8!important;
+}
+/* الاسم: عسلي غامق جوزي */
+#nsmat-copyrights a,
+#nsmat-copyrights a *{
+  color:#b8782a!important;
+  text-shadow:0 1px 0 rgba(255,215,150,.25),0 0 6px rgba(140,85,25,.5)!important;
+}
+
+#nsmat-copyrights a:hover{
+  color:#d99a45!important;
+}
